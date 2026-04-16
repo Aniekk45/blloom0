@@ -1858,139 +1858,56 @@
   </div>
   <div class="products-grid" id="productsGrid">
 
-    <div class="product-card reveal" data-category="tops">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-1">
-          <span class="prod-symbol">T</span>
-        </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('VOID TEE', '₹1,299')">Add to Cart</button>
-        </div>
-      </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">Void Oversized Tee</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · All Sizes</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹1,299</div>
-          <div class="product-tag">New</div>
-        </div>
-      </div>
-    </div>
+  <!-- 🔥 VOID COLLECTION (FULL WIDTH HERO CARD) -->
+  <div class="product-card reveal" style="grid-column: 1 / -1; height: 80vh;">
 
-    <div class="product-card reveal reveal-delay-1" data-category="bottoms">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-2">
-          <span class="prod-symbol" style="color:rgba(8,8,8,0.15); -webkit-text-stroke:none;">C</span>
-        </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('SAND CARGO', '₹2,499')">Add to Cart</button>
-        </div>
-      </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">Sand Cargo Pants</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · All Sizes</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹2,499</div>
-          <div class="product-tag">Best Seller</div>
-        </div>
-      </div>
-    </div>
+    <div class="product-img" style="height: 100%;">
 
-    <div class="product-card reveal reveal-delay-2" data-category="outerwear">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-3">
-          <span class="prod-symbol">H</span>
-        </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('MONOLITH HOODIE', '₹3,199')">Add to Cart</button>
-        </div>
-      </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">Monolith Hoodie</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · All Sizes</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹3,199</div>
-          <div class="product-tag">Drop</div>
-        </div>
-      </div>
-    </div>
+      <div class="product-img-inner product-img-bg prod-1" style="height: 100%; position: relative;">
 
-    <div class="product-card reveal reveal-delay-3" data-category="tops">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-4">
-          <span class="prod-symbol">S</span>
-        </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('SHADOW SWEATSHIRT', '₹2,799')">Add to Cart</button>
-        </div>
-      </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">Shadow Crewneck</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · All Sizes</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹2,799</div>
-          <div class="product-tag">New</div>
-        </div>
-      </div>
-    </div>
+        <!-- TEXT CONTENT -->
+        <div style="
+          position: absolute;
+          bottom: 80px;
+          left: 60px;
+        ">
 
-    <div class="product-card reveal" data-category="outerwear">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-5">
-          <span class="prod-symbol" style="color:rgba(8,8,8,0.1); -webkit-text-stroke:none;">J</span>
-        </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('BONE JACKET', '₹4,999')">Add to Cart</button>
-        </div>
-      </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">Bone Utility Jacket</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · All Sizes</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹4,999</div>
-          <div class="product-tag">Limited</div>
-        </div>
-      </div>
-    </div>
+          <div style="
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            color: var(--ash);
+            margin-bottom: 10px;
+          ">
+            NEW DROP
+          </div>
 
-    <div class="product-card reveal reveal-delay-1" data-category="accessories">
-      <div class="product-img">
-        <div class="product-img-inner product-img-bg prod-6">
-          <span class="prod-symbol">B</span>
+          <div style="
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+          ">
+            Void<br>Collection
+          </div>
+
+          <div style="
+            margin-top: 20px;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+          ">
+            LAUNCHING SOON
+          </div>
+
         </div>
-        <div class="product-overlay">
-          <button class="quick-add" onclick="addToCart('BLLOOM CAP', '₹899')">Add to Cart</button>
-        </div>
+
       </div>
-      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
-      <div class="product-info">
-        <div>
-          <div class="product-name">BLLOOM Six-Panel Cap</div>
-          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">Unisex · One Size</div>
-        </div>
-        <div class="product-meta">
-          <div class="product-price">₹899</div>
-          <div class="product-tag">New</div>
-        </div>
-      </div>
+
     </div>
 
   </div>
+
+  <!-- ⚡ SUPABASE PRODUCTS WILL AUTO LOAD BELOW THIS -->
+
+</div>
 </section>
 
 <!-- ─── MANIFESTO ─── -->
