@@ -1557,5 +1557,23 @@ cartSheet.addEventListener('touchend', e => {
   if (dy > 80) closeCart();
 }, { passive: true });
 </script>
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+  const supabase = window.supabase.createClient(
+    'https://wwaxaroxjioivmfrjqpd.supabase.co',
+    'sb_publishable_T-v_AwQYeG0I9das84udIg_H75MYCQW'
+  );
+
+  async function getProducts() {
+    const { data, error } = await supabase
+      .from('products')
+      .select('*');
+
+    console.log(data, error);
+  }
+
+  getProducts();
+</script>
 </body>
 </html>
