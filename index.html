@@ -1849,58 +1849,109 @@
     <button class="filter-btn" onclick="filterProducts('outerwear', this)">Outerwear</button>
     <button class="filter-btn" onclick="filterProducts('accessories', this)">Accessories</button>
   </div>
-  <div class="products-grid" id="productsGrid">
+  <!-- NEW IN SECTION -->
+<section class="section" id="shop">
 
-  <!-- 🔥 VOID COLLECTION (FULL WIDTH HERO CARD) -->
-  <div class="product-card reveal" style="grid-column: 1 / -1; height: 80vh;">
+  <div class="section-label reveal">Shop</div>
 
-    <div class="product-img" style="height: 100%;">
-
-      <div class="product-img-inner product-img-bg prod-1" style="height: 100%; position: relative;">
-
-        <!-- TEXT CONTENT -->
-        <div style="
-          position: absolute;
-          bottom: 80px;
-          left: 60px;
-        ">
-
-          <div style="
-            font-size: 12px;
-            letter-spacing: 0.3em;
-            color: var(--ash);
-            margin-bottom: 10px;
-          ">
-            NEW DROP
-          </div>
-
-          <div style="
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.1;
-          ">
-            Void<br>Collection
-          </div>
-
-          <div style="
-            margin-top: 20px;
-            font-size: 12px;
-            letter-spacing: 0.2em;
-          ">
-            LAUNCHING SOON
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px;">
+    <h2 class="section-title reveal reveal-delay-1">New In</h2>
   </div>
 
-  <!-- ⚡ SUPABASE PRODUCTS WILL AUTO LOAD BELOW THIS -->
+  <!-- PRODUCTS GRID -->
+  <div class="products-grid" id="productsGrid"></div>
 
-</div>
+</section>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+const supabase = window.supabase.createClient(
+  'https://wwaxaroxjioivmfrjqpd.supabase.co',
+  'sb_publishable_T-v_AwQYeG0I9das84udIg_H75MYCQW'
+);
+
+/* CART */
+function addToCart(name, price) {
+  alert(name + " added to cart 🛒");
+}
+
+/* WISHLIST */
+function toggleWishlist(btn) {
+  if (btn.innerText === "♡") {
+    btn.innerText = "♥";
+    btn.style.color = "red";
+  } else {
+    btn.innerText = "♡";
+    btn.style.color = "white";
+  }
+}
+
+/* LOAD PRODUCTS */
+async function loadProducts() {
+  const { data, error } = await supabase
+    .from('products')
+    .select('*');
+
+  const container = document.getElementById('productsGrid');
+
+  if (error) {
+    console.log(error);
+    container.innerHTML = "<p style='color:red;'>Error loading products</p>";
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    container.innerHTML = "<p>No products found</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  data.forEach((product, index) => {
+    const card = document.createElement('div');
+    card.className = `product-card reveal reveal-delay-${index % 4}`;
+
+    card.innerHTML = `
+      <div class="product-img">
+        <div class="product-img-inner" style="
+          background-image: url('${product.image_url || ''}');
+          background-size: cover;
+          background-position: center;
+        "></div>
+
+        <div class="product-overlay">
+          <button class="quick-add" onclick="addToCart('${product.name}', '${product.price}')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+
+      <div class="product-info">
+        <div>
+          <div class="product-name">${product.name}</div>
+          <div style="font-size:11px; color:var(--ash); letter-spacing:0.1em; margin-top:4px;">
+            Unisex · All Sizes
+          </div>
+        </div>
+
+        <div class="product-meta">
+          <div class="product-price">₹${product.price}</div>
+          <div class="product-tag">New</div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+loadProducts();
+</script>
 </section>
 
 <!-- ─── MANIFESTO ─── -->
